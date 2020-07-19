@@ -1,9 +1,10 @@
-asciinema
 git
-tig
-mas
 wget
-hub
 hugo
 yarn
-rbenv
+goto
+node
+zsh
+zsh-completions
+postgresql
+

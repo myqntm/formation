@@ -87,17 +87,6 @@ if [ ! -d "$HOME/.bin/" ]; then
 	mkdir "$HOME/.bin"
 fi
 
-# -----------------------------------------------------------------------------
-# Bash-it
-# -----------------------------------------------------------------------------
-if [ -d "$HOME/.bash_it" ]; then
-	print_success_muted "Bash-it already installed. Skipping."
-else
-	step "Installing Bash-it…"
-	git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-	~/.bash_it/install.sh --silent --no-modify-config
-	print_success "Bash-it installed!"
-fi
 
 # -----------------------------------------------------------------------------
 # NVM
@@ -197,15 +186,15 @@ brew cleanup 2> /dev/null
 ###############################################################################
 # INSTALL: npm packages
 ###############################################################################
-if [ -e $cwd/swag/npm ]; then
-	chapter "Installing npm packages…"
+# if [ -e $cwd/swag/npm ]; then
+# 	chapter "Installing npm packages…"
 
-	for pkg in $(<$cwd/swag/npm); do
-		KEY="${pkg%%::*}"
-		VALUE="${pkg##*::}"
-		install_npm_packages $KEY $VALUE
-	done
-fi
+# 	for pkg in $(<$cwd/swag/npm); do
+# 		KEY="${pkg%%::*}"
+# 		VALUE="${pkg##*::}"
+# 		install_npm_packages $KEY $VALUE
+# 	done
+# fi
 
 
 ###############################################################################
